@@ -12,7 +12,7 @@ class LoadPackageInfo extends Command
     /**
      * Count pages
      */
-    const PAGES = 1;
+    const PAGES = 10;
 
     /**
      * Count elements for page

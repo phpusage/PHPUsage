@@ -52,12 +52,14 @@ class AnalyseFile extends Command
             $this->info('install: ' . $key);
         });
 
-        foreach ($this->getDirContents('./stubs') as $file) {
+        foreach ($this->getDirContents('./stubs') as $key => $file) {
             $content = file_get_contents($file);
 
             $this->definedFunction = $this->definedFunction->map(function ($count, $key) use ($content) {
                 return $count + substr_count($content, $key . '(');
             });
+
+            $this->info('analise: ' . $key);
         }
 
         $this->definedFunction = $this->definedFunction->filter(function ($count) {
