@@ -58,8 +58,6 @@ class AnalyseFile extends Command
             $this->definedFunction = $this->definedFunction->map(function ($count, $key) use ($content) {
                 return $count + substr_count($content, $key . '(');
             });
-
-            $this->info('analise: ' . $key);
         }
 
         $this->definedFunction = $this->definedFunction->filter(function ($count) {
