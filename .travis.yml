@@ -12,7 +12,7 @@ before_script:
   - travis_retry composer install --no-interaction --prefer-dist --no-suggest
 
 script:
-  - artisan analise:file
+  - php artisan analise:file
 
 deploy:
   local_dir: build
