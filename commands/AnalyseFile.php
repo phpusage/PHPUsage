@@ -60,7 +60,7 @@ class AnalyseFile extends Command
             });
             
             if($key % 1000 == 0) {
-                $this->info('success $key - '.$time);
+                $this->info('success '.$key);
             }
             
         }
