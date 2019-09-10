@@ -58,6 +58,11 @@ class AnalyseFile extends Command
             $this->definedFunction = $this->definedFunction->map(function ($count, $key) use ($content) {
                 return $count + substr_count($content, $key . '(');
             });
+            
+            if($key % 1000 == 0) {
+                $this->info('success $key - '.$time);
+            }
+            
         }
 
         $this->definedFunction = $this->definedFunction->filter(function ($count) {
